@@ -1,25 +1,24 @@
-import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.Month;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        
-        //e) Mostrar o dia do mês da quarta quinta-feira de novembro do ano atual
+        // 13) Escreva um programa em Java que mostre a quantos dias você está vivo.
         Scanner teclado = new Scanner(System.in);
-        int ano =  LocalDate.now().getYear();
-        int mes  = Month.NOVEMBER.getValue();
-        LocalDate data = LocalDate.of(ano, mes, 1);
-        
-        int primeira_quarta = DayOfWeek.WEDNESDAY.getValue() - data.getDayOfWeek().getValue();
-        if(primeira_quarta < 0)
-            primeira_quarta+=7;
+        DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String digitado = teclado.nextLine();
 
-        data = data.plusDays(primeira_quarta + (3 * 7));
-        System.out.println(data);
+        LocalDate dataAniversario = LocalDate.parse(digitado, formatador);
+        LocalDate hoje = LocalDate.now();
+        Period idade = Period.between(dataAniversario, hoje);
+        
+        int qntDIas = (idade.getYears() * 365 + idade.getMonths() * 30 + idade.getDays());
+        System.out.println(qntDIas);
 
 
         teclado.close();
+
     }
 }

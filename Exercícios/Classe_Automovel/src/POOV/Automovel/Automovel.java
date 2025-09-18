@@ -1,3 +1,4 @@
+package POOV.Automovel;
 public class Automovel {
     private double preco;
     private double rendimento;
@@ -7,16 +8,16 @@ public class Automovel {
         rendimento = 0;
     }
 
-    public Automovel(double p, double r){
-        setPreco(p);
-        setRendimento(r);
+    public Automovel(double preco, double rendimento){
+        setPreco(preco);
+        setRendimento(rendimento);
     }
 
-    private void setPreco(Double p){
-        if(p > 0)
-        preco = p;
+    private void setPreco(Double preco){
+        if(preco > 0)
+        this.preco = preco;
         else
-        preco = 0;
+        this.preco = 0;
     }
     
     public void setRendimento(double novoRendimento){
@@ -35,6 +36,6 @@ public class Automovel {
 
     public void printar(){
         System.out.println("Preco: " + preco);
-        System.out.println("Rendimento: " + rendimento);
+        System.out.println("Rendimento: " + getRendimento());
     }
 }

@@ -1,3 +1,5 @@
+package POOV.Contador;
+
 public class App {
     public static void main(String[] args) throws Exception {
         TipoContador c1 = new TipoContador(100);

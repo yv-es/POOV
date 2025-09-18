@@ -54,12 +54,12 @@ public class Produto {
             qntAtual = 0;
     }
 
-    public void setqntMinima(int qntM){
-        if(qntM > 0)
-            qntMinima = qntM;
+    public void setqntMinima(int qntMinima){
+        if(qntMinima > 0)
+            this.qntMinima = qntMinima;
         else{
             System.out.println("Quantidade minima padrao: 1");
-            qntMinima = 1;
+            this.qntMinima = 1;
         }
     }
 
@@ -67,16 +67,16 @@ public class Produto {
         dataCompra = dataC;
     }
 
-    public void setPrecoCompra(double precoC){
-        if(precoC > 0 && qntMinima > 0)
-            precoCompra = precoC;
+    public void setPrecoCompra(double precoCompra){
+        if(precoCompra > 0 && qntMinima > 0)
+            this.precoCompra = precoCompra;
         else
-            precoCompra = 0;
+            this.precoCompra = 0;
     }
 
-    public void setPrecoVenda(double precoV){
-        if(precoV > 0 && qntMinima > 0)
-            precoVenda = precoV;
+    public void setPrecoVenda(double precoVenda){
+        if(precoVenda > 0 && qntMinima > 0)
+            this.precoVenda = precoVenda;
         else
             precoVenda = 0;
     }

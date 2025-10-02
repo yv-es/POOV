@@ -22,10 +22,10 @@ public class Produto {
         precoVenda = 0;
     }
 
-    public Produto(String c, String n, String m, int qntAtual, int qntMinima, LocalDate dataCompra, double precoCompra, double precoVenda){
-        codigo = c;
-        nome = n;
-        marca = m;
+    public Produto(String codigo, String nome, String marca, int qntAtual, int qntMinima, LocalDate dataCompra, double precoCompra, double precoVenda){
+        this.codigo = codigo;
+        this.nome = nome;
+        this.marca = marca;
         setQntAtual(qntAtual);
         setqntMinima(qntMinima);
         setDataCompra(dataCompra);
@@ -35,24 +35,24 @@ public class Produto {
     }
 
 
-    public void setCodigo(String c){
-        codigo = c;
+    public void setCodigo(String codigo){
+        this.codigo = codigo;
     }
     
-    public void setNome(String n){
-        nome = n;
+    public void setNome(String nome){
+        this.nome = nome;
     }
 
-    public void setMarca(String m){
-        marca = m;
+    public void setMarca(String marca){
+        this.marca = marca;
     }
 
-    public void setQntAtual(int qntA){
-        if(qntA > 0){
-            qntAtual = qntA;
+    public void setQntAtual(int qntAtual){
+        if(qntAtual > 0){
+            this.qntAtual = qntAtual;
         }
         else
-            qntAtual = 0;
+            this.qntAtual = 0;
     }
 
     public void setqntMinima(int qntMinima){
@@ -64,8 +64,8 @@ public class Produto {
         }
     }
 
-    public void setDataCompra(LocalDate dataC){
-        dataCompra = dataC;
+    public void setDataCompra(LocalDate dataCompra){
+        this.dataCompra = dataCompra;
     }
 
     public void setPrecoCompra(double precoCompra){
@@ -124,4 +124,13 @@ public class Produto {
         System.out.println("Preco compra: " + precoCompra);
         System.out.println("Preco venda: " + precoVenda);
     }
+
+    @Override
+    public String toString() {
+        return "Produto [codigo=" + codigo + ", nome=" + nome + ", marca=" + marca + ", qntAtual=" + qntAtual
+                + ", qntMinima=" + qntMinima + ", dataCompra=" + dataCompra + ", precoCompra=" + precoCompra
+                + ", precoVenda=" + precoVenda + "]";
+    }
+
+
 }
